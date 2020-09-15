@@ -7,15 +7,38 @@ var ctx = canvas.getContext("2d");
 
 const clt = [1,2,3]; const crmt = [1,2]; 
  
+const white = [['#ffffff','#ffffff','#ffffff'],
+              ['#ffffff','#ffffff','#ffffff'],
+              ['#ffffff','#ffffff','#ffffff']]
+
+const orange = [['#ffa500','#ffa500','#ffa500'],
+                ['#ffa500','#ffa500','#ffa500'],
+                ['#ffa500','#ffa500','#ffa500']]
+
+const yellow = [['#ffff00','#ffff00','#ffff00'],
+                ['#ffff00','#ffff00','#ffff00'],
+                ['#ffff00','#ffff00','#ffff00']]
+
+const red = [['#ff0000','#ff0000','#ff0000'],
+                ['#ff0000','#ff0000','#ff0000'],
+                ['#ff0000','#ff0000','#ff0000']]
+
+const blue = [['#0e3e81','#0e3e81','#0e3e81'],
+                ['#0e3e81','#0e3e81','#0e3e81'],
+                ['#0e3e81','#0e3e81','#0e3e81']]
+
+const green = [['#008000','#008000','#008000'],
+                ['#008000','#008000','#008000'],
+                ['#008000','#008000','#008000']]
 
 
 // Pick out the form elements for easy access later
 var x1 = 100;
 var x2 = 100;
-var y = 100;
+var y = 100; 
 var color = "#ff8d4b";
 
-console.log(typeof x1);
+// console.log(typeof x1);
 // Animation function
 function draw() {
   // clear the canvas
@@ -69,8 +92,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx, y - h - wx * 0.5);
   ctx.lineTo(x, y - h * 1);
   ctx.closePath();
-  ctx.fillStyle = shadeColor(color, -10);
-  ctx.strokeStyle = shadeColor(color, 50);
+  ctx.fillStyle = orange[0][2],
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //top left
@@ -80,8 +103,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy, y - h - wy * 0.5);
   ctx.lineTo(x, y - h * 1);
   ctx.closePath();
-  ctx.fillStyle = shadeColor(color, 10);
-  ctx.strokeStyle = shadeColor(color, 50);
+  ctx.fillStyle = white[0][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //top left
@@ -91,21 +114,21 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx + wy, y - h - (wx * 0.5 + wy * 0.5));
   ctx.lineTo(x + wy, y - h - wy * 0.5);
   ctx.closePath();
-  ctx.fillStyle = shadeColor(color, 20);
-  ctx.strokeStyle = shadeColor(color, 60);
+  ctx.fillStyle = blue[2][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
   // top mid
-  console.log(color);
+  // console.log(color);
   ctx.beginPath();
   ctx.moveTo(x + wy, y - h - wy * 0.5);
   ctx.lineTo(x - wx + 300, y - 50 - h - wx * 0.5);
   ctx.lineTo(x + wy, y - h - wy * 0.5 - 100);
   ctx.lineTo(x - wx + wy, y - h - (wx * 0.5 + wy * 0.5));
   ctx.closePath();
-  ctx.fillStyle = shadeColor("#000000", 20);
-  ctx.strokeStyle = shadeColor("#000000", 60);
+  ctx.fillStyle = blue[2][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   // top mid
@@ -115,8 +138,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy + 100, y - h - wy * 0.5 - 50);
   ctx.lineTo(x - wx + wy + 200, y - h - (wx * 0.5 + wy * 0.5) + 100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor("#000000", 20);
-  ctx.strokeStyle = shadeColor("#000000", 60);
+  ctx.fillStyle = white[0][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -127,8 +150,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy + 100, y - h - wy * 0.5 - 150);
   ctx.lineTo(x - wx + wy + 100, y - h - (wx * 0.5 + wy * 0.5) -50);
   ctx.closePath();
-  ctx.fillStyle = shadeColor("#ff8888", 20);
-  ctx.strokeStyle = shadeColor("#ff8888", 60);
+  ctx.fillStyle = blue[2][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   // top rigth
@@ -138,8 +161,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy + 100, y - h - wy * 0.5 - 50);
   ctx.lineTo(x - wx + wy + 200, y - h - (wx * 0.5 + wy * 0.5) + 100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor("#ff8888", 20);
-  ctx.strokeStyle = shadeColor("#ff8888", 60);
+  ctx.fillStyle = white[0][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -150,8 +173,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx, y - h - wx * 0.5 + 100);
   ctx.lineTo(x, y - h * 1 + 100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#eeeeeee', -10);
-  ctx.strokeStyle = shadeColor('#eeeeeee', -50);
+  ctx.fillStyle = orange[1][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //middle left
@@ -161,8 +184,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy, y - h - wy * 0.5 + 100);
   ctx.lineTo(x, y - h * 1 + 100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#eeeeeee', -10);
-  ctx.strokeStyle = shadeColor('#eeeeeee', -50);
+  ctx.fillStyle = white[1][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -173,8 +196,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + 100, y - h * 1 + 50);
   ctx.lineTo(x + wy , y - h - wy * 0.5 + 200);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#eeeeeee', -10);
-  ctx.strokeStyle = shadeColor('#eeeeeee', -50);
+  ctx.fillStyle = white[1][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -185,8 +208,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + 200, y - h * 1 );
   ctx.lineTo(x + wy +100, y - h - wy * 0.5 + 150);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#999999', -10);
-  ctx.strokeStyle = shadeColor('#999999', -50);
+  ctx.fillStyle = white[1][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -197,8 +220,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx, y - h - wx * 0.5 + 200);
   ctx.lineTo(x, y - h * 1 + 200);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#ff4444', -10);
-  ctx.strokeStyle = shadeColor('#ff4444', -50);
+  ctx.fillStyle = orange[2][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //bottom left
@@ -208,8 +231,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy, y - h - wy * 0.5 + 200);
   ctx.lineTo(x, y - h * 1 + 200);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#ff4444', -10);
-  ctx.strokeStyle = shadeColor('#ff4444', -50);
+  ctx.fillStyle = white[2][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -220,8 +243,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + 100, y - h * 1 + 250);
   ctx.lineTo(x + wy , y - h - wy * 0.5 + 200);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#eeeeeee', -10);
-  ctx.strokeStyle = shadeColor('#eeeeeee', -50);
+  ctx.fillStyle = white[2][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   // bottom rigth
@@ -231,8 +254,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + 200, y - h * 1 + 200);
   ctx.lineTo(x + wy + 100 , y - h - wy * 0.5 + 150);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#dddddd', -10);
-  ctx.strokeStyle = shadeColor('#dddddd', -50);
+  ctx.fillStyle = white[2][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -243,8 +266,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x -100, y - h * 1 -50);
   ctx.lineTo(x - wx - 100, y - h - wx * 0.5 -50);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#dddddd', -10);
-  ctx.strokeStyle = shadeColor('#dddddd', -50);
+  ctx.fillStyle = orange[0][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //top left middle
@@ -254,8 +277,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx + wy, y - h - (wx * 0.5 + wy * 0.5));
   ctx.lineTo(x + wy -200, y - h - wy * 0.5 -100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#dddddd', -20);
-  ctx.strokeStyle = shadeColor('#dddddd', -60);
+  ctx.fillStyle = blue[1][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -266,8 +289,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx + wy, y - h - (wx * 0.5 + wy * 0.5) -100);
   ctx.lineTo(x + wy , y - h - wy * 0.5 -100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#222222', -20);
-  ctx.strokeStyle = shadeColor('#222222', -60);
+  ctx.fillStyle = blue[1][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -278,8 +301,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x + wy , y - h - wy * 0.5 -100);
   ctx.lineTo(x - wx + wy +200, y - h - (wx * 0.5 + wy * 0.5) -100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#fffeee', -20);
-  ctx.strokeStyle = shadeColor('#fffeee', -60);
+  ctx.fillStyle = blue[1][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -290,8 +313,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx -100, y - wx * 0.5 -50);
   ctx.lineTo(x -300, y - h * 1 -50);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#dddddd', -10);
-  ctx.strokeStyle = shadeColor('#dddddd', -50);
+  ctx.fillStyle = orange[0][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
   //top left middle
@@ -301,8 +324,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx + wy -100, y - h - (wx * 0.5 + wy * 0.5) -50);
   ctx.lineTo(x + wy -300, y - h - wy * 0.5 -150);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#dddf99', -20);
-  ctx.strokeStyle = shadeColor('#dddf99', -60);
+  ctx.fillStyle = blue[1][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -313,8 +336,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx , y - h - wx * 0.5 -100);
   ctx.lineTo(x - wx + wy , y - h - (wx * 0.5 + wy * 0.5) -100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#333f99', -20);
-  ctx.strokeStyle = shadeColor('#333f99', -60);
+  ctx.fillStyle = blue[0][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -325,8 +348,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx , y - h - wx * 0.5 -200);
   ctx.lineTo(x - wx + wy , y - h - (wx * 0.5 + wy * 0.5) -100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#2ff99', -20);
-  ctx.strokeStyle = shadeColor('#2f3f99', -60);
+  ctx.fillStyle = blue[0][2]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -336,8 +359,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx, y - wx * 0.5);
   ctx.lineTo(x -200, y - h * 1 );
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#2ff99', -10);
-  ctx.strokeStyle = shadeColor('#2ff99', -50);
+  ctx.fillStyle = orange[1][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -347,8 +370,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x -200, y - h * 1 );
   ctx.lineTo(x - wx -100, y - h - wx * 0.5 +150);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#4dddd9', -10);
-  ctx.strokeStyle = shadeColor('#4dddd9', -50);
+  ctx.fillStyle = orange[1][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -358,8 +381,8 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx, y - wx * 0.5 + 100);
   ctx.lineTo(x -200, y - h * 1 +100);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#f99999', -10);
-  ctx.strokeStyle = shadeColor('#f99999', -50);
+  ctx.fillStyle = orange[2][1]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
@@ -369,14 +392,14 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x -200, y - h * 1 +100);
   ctx.lineTo(x - wx -100, y - wx * 0.5 + 150);
   ctx.closePath();
-  ctx.fillStyle = shadeColor('#f99999', -10);
-  ctx.strokeStyle = shadeColor('#f99999', -50);
+  ctx.fillStyle = orange[2][0]
+  ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
 
 
-  const B = () => {
-
+  const U = () => {
+    
   }
 
 
