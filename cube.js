@@ -31,6 +31,33 @@ const green = [['#008000','#008000','#008000'],
                 ['#008000','#008000','#008000'],
                 ['#008000','#008000','#008000']]
 
+const U = () => {
+  const aux = orange[0];
+  orange[0] = white[0];
+  white[0] = red[0]
+  red[0] = yellow[0]
+  yellow[0] = aux;
+
+  const auxBlue0 = [blue[2][0],blue[1][0], blue[0][0]];
+  const auxBlue1 = [blue[2][1],blue[1][1], blue[0][1]];
+  const auxBlue2 = [blue[2][2],blue[1][2], blue[0][2]];
+
+  blue[0] = auxBlue0
+  blue[1] = auxBlue1
+  blue[2] = auxBlue2
+}
+
+const R = () => {
+  const auxBlue0 = [blue[0][0], blue[0][1], white[0][2]];
+  const auxBlue1 = [blue[1][0], blue[1][1], white[1][2]];
+  const auxBlue2 = [blue[2][0], blue[2][1], white[2][2]];
+  
+  
+}
+
+// const D = () => {
+
+// }
 
 // Pick out the form elements for easy access later
 var x1 = 100;
@@ -397,10 +424,5 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.stroke();
   ctx.fill();
 
-
-  const U = () => {
-    
-  }
-
-
 }
+
