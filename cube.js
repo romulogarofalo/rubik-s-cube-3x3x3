@@ -89,9 +89,15 @@ const R = () => {
   yellow[2] = auxYellow2;
 }
 
-// const D = () => {
+const R_ = () => {
+  R();
+  R();
+  R();
+}
 
-// }
+const D = () => {
+
+}
 
 // Pick out the form elements for easy access later
 var x1 = 100;
