@@ -32,9 +32,9 @@ const green = [['#008000','#008000','#008000'],
                 ['#008000','#008000','#008000']]
 
 const U = () => {
-  const aux = orange[0];
+  const aux = orange[0].reverse();
   orange[0] = white[0];
-  white[0] = red[0]
+  white[0] = red[0].reverse();
   red[0] = yellow[0]
   yellow[0] = aux;
 
@@ -54,7 +54,7 @@ const R = () => {
 
   const auxRed0 = [red[0][2], red[1][2], red[2][2]];
   const auxRed1 = [red[0][1], red[1][1], red[2][1]];
-  const auxRed2 = [red[2][2], red[1][2], red[0][2]];
+  const auxRed2 = [red[0][0], red[1][0], red[2][0]];
 
   const auxWhite0 = [white[0][0], white[0][1], green[2][2]]; 
   const auxWhite1 = [white[1][0], white[1][1], green[1][2]];
