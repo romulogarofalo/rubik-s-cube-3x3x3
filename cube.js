@@ -51,8 +51,42 @@ const R = () => {
   const auxBlue0 = [blue[0][0], blue[0][1], white[0][2]];
   const auxBlue1 = [blue[1][0], blue[1][1], white[1][2]];
   const auxBlue2 = [blue[2][0], blue[2][1], white[2][2]];
-  
-  
+
+  const auxRed0 = [red[0][2], red[1][2], red[2][2]];
+  const auxRed1 = [red[0][1], red[1][1], red[2][1]];
+  const auxRed2 = [red[2][2], red[1][2], red[0][2]];
+
+  const auxWhite0 = [white[0][0], white[0][1], green[2][2]]; 
+  const auxWhite1 = [white[1][0], white[1][1], green[1][2]];
+  const auxWhite2 = [white[2][0], white[2][1], green[0][2]];
+
+  const auxGreen0 = [green[0][0], green[0][1], yellow[0][2]];
+  const auxGreen1 = [green[1][0], green[1][1], yellow[1][2]];
+  const auxGreen2 = [green[2][0], green[2][1], yellow[2][2]];
+
+  const auxYellow0 = [yellow[0][0], yellow[0][1], blue[2][2]];
+  const auxYellow1 = [yellow[1][0], yellow[1][1], blue[1][2]];
+  const auxYellow2 = [yellow[2][0], yellow[2][1], blue[0][2]];
+
+  blue[0] = auxBlue0;
+  blue[1] = auxBlue1;
+  blue[2] = auxBlue2;
+
+  red[0] = auxRed0;
+  red[1] = auxRed1;
+  red[2] = auxRed2;
+
+  white[0] = auxWhite0;
+  white[1] = auxWhite1;
+  white[2] = auxWhite2;
+
+  green[0] = auxGreen0;
+  green[1] = auxGreen1;
+  green[2] = auxGreen2;
+
+  yellow[0] = auxYellow0;
+  yellow[1] = auxYellow1;
+  yellow[2] = auxYellow2;
 }
 
 // const D = () => {
@@ -351,7 +385,7 @@ function drawCube(x, y, wx, wy, h, color) {
   ctx.lineTo(x - wx + wy -100, y - h - (wx * 0.5 + wy * 0.5) -50);
   ctx.lineTo(x + wy -300, y - h - wy * 0.5 -150);
   ctx.closePath();
-  ctx.fillStyle = blue[1][2]
+  ctx.fillStyle = blue[0][0];
   ctx.strokeStyle = "#000000"
   ctx.stroke();
   ctx.fill();
